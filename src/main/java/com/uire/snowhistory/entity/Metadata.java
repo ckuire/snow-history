@@ -20,7 +20,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-@TableName("metadata")
+@TableName(value = "metadata", autoResultMap = true)
 public class Metadata {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
@@ -71,7 +71,7 @@ public class Metadata {
     private String meta;
 
     @Data
-    static class Sender {
+    public static class Sender {
         // 发送者 QQ 号
         private String user_id;
         // 	昵称
